@@ -10,10 +10,51 @@
       integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../node_modules/basiclightbox/dist/basicLightbox.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <include src="./partials/example.html"></include>
+    <!-- Так добавляются фрагменты в главные HTML-файлы страниц.
+    <include src="./partials/example.html"></include> -->
+    <section class="section">
+      <div class="header">
+        <h1 class="title">Search a picture</h1>
+        <form class="search-form" id="search-form">
+          <input
+            class="input"
+            type="text"
+            name="query"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+
+          <button class="btn btn-primary submit_btn button" type="submit">Submit</button>
+
+          <button
+            type="submit"
+            class="load-more_btn button btn btn-primary button"
+            data-action="load-more"
+          >
+            <span
+              class="spinner-border spinner-border-sm spinner is-hidden"
+              role="status"
+              aria-hidden="true"
+            ></span>
+            <span class="label">Load more</span>
+          </button>
+        </form>
+      </div>
+      <div class="renderBox">
+        <ul class="gallery"></ul>
+      </div>
+      <div class="empty-div-for-scrollfetch"></div>
+    </section>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
